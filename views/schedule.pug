@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Doctor's Schedule
+  body
+    h1 Doctor's Schedule
+    h2= `Doctor: ${docid}`
+    ul
+      each schedule in schedules
+        li
+          form(action='/appointments', method='post')
+            input(type='hidden', name='pid', value='2') // Update with actual patient ID
+            input(type='hidden', name='scheduleid', value=schedule.scheduleid)
+            input(type='hidden', name='appodate', value=schedule.scheduledate)
+            | Date: #{schedule.scheduledate}, Time: #{schedule.scheduletime}
+            button(type='submit') Book Appointment
+          hr

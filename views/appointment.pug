@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Appointments
+  body
+    h1 Appointments
+    ul
+      each appointment in appointments
+        li
+          | Patient: #{appointment.pid}, Doctor: #{appointment.docid}
+          br
+          | Date: #{appointment.appodate}
+          hr

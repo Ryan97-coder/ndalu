@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Doctors
+  body
+    h1 Doctors
+    ul
+      each doctor in doctors
+        li
+          a(href=`/schedule/${doctor.docid}`)= doctor.docname
+
+
+ul
+  each doctor in doctors
+    li
+      | Name: #{doctor.docname}, Specialty: #{doctor.specialty}, Email: #{doctor.docemail}, Tel: #{doctor.doctel}
+      br
+
+// ... (Previous code)
